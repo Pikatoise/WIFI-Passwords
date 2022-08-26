@@ -8,6 +8,8 @@ namespace WI_FI_Passwords
 {
     public interface IParser
     {
-        IEnumerable<string> Parse(string response);
+        string ErrorMessage { get; }
+
+        ParserResult Parse(string response);
     }
 }

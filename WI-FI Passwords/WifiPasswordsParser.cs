@@ -8,7 +8,7 @@ namespace WI_FI_Passwords
 {
     public class WifiPasswordsParser : IParser
     {
-        public IEnumerable<string> Parse(string response)
+        public ParserResult Parse(string response)
         {
             throw new NotImplementedException();
         }
