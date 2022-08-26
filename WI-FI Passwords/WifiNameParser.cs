@@ -10,7 +10,7 @@ namespace WI_FI_Passwords
     {
         public ParserResult Parse(string response)
         {
-            throw new NotImplementedException();
+            return new ParserResult() { SingleResult = response };
         }
     }
 }

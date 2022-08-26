@@ -8,8 +8,8 @@ namespace WI_FI_Passwords
 {
     public struct ParserResult
     {
-        public string ErrorMessage { get; }
-        public string SingleResult { get; }
-        public IEnumerable<string> MultipleResult { get; }
+        public string? ErrorMessage { get; init; }
+        public string? SingleResult { get; init; }
+        public IEnumerable<string>? MultipleResult { get; init; }
     }
 }
