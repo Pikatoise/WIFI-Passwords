@@ -7,7 +7,7 @@ namespace WI_FI_Passwords
         {
             InitializeComponent();
 
-            pR = CmdRequest.Request(@$"/c ping 127.0.0.1", new WifiNameParser());
+            pR = CmdRequest.Request(@$"/c netsh wlan show profiles", new WifiNameParser());
 
             if (pR.ErrorMessage == null) label1.Text = pR.SingleResult;
         }

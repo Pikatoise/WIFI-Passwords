@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WI_FI_Passwords
+namespace Wifi_Passwords
 {
     public class WifiNameParser : IParser
     {
