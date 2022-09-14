@@ -13,14 +13,21 @@ namespace Wifi_Passwords
 {
     public partial class Form1 : Form
     {
-        ParserResult pR;
+        ParserResult resultNames;
+        List<string> passwords;
         public Form1()
         {
             InitializeComponent();
 
-            pR = CmdRequest.Request($@"/c netsh wlan show profiles", new WifiNameParser()); // Для теста: ping 127.0.0.1 | netsh wlan show profiles
+            resultNames = CmdRequest.Request($@"/c netsh wlan show profiles", new WifiNameParser()); // Для теста: ping 127.0.0.1 | netsh wlan show profiles
 
-            if (pR.ErrorMessage == null) textBox1.Text = pR.MultipleResult[0];
+            if (resultNames.ErrorMessage == null)
+            {
+                foreach (string s in resultNames.MultipleResult)
+                {
+                    passwords.Add(CmdRequest.Request($@"/c netsh wlan show profile name=""{s}"" key=clear | find /I ""Содержимое ключа""", new WifiNameParser()).SingleResult);
+                }
+            } else textBox1.Text = resultNames.ErrorMessage;
         }
     }
 }

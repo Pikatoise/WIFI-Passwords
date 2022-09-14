@@ -16,6 +16,7 @@ namespace Wifi_Passwords
             string rowresult;
 
             //Encoding.RegisterProvider(CodePagesEncodingProvider.Instance); // На фреймворке не нужна
+
             var codepage = CultureInfo.CurrentCulture.TextInfo.OEMCodePage;
 
             using (Process procCommand = Process.Start(new ProcessStartInfo(@"cmd", command)
@@ -28,9 +29,7 @@ namespace Wifi_Passwords
             }))
             {
                 StreamReader srIncoming = procCommand.StandardOutput;
-                //rowresult = srIncoming.ReadToEnd();
-
-                rowresult = "\r\nПрофили интерфейса Беспроводная сеть 2:\r\n\r\nПрофили групповой политики (только чтение)\r\n------------------------------------------\r\n    <Отсутствует>\r\n\r\nПрофили пользователей\r\n---------------------------\r\n    Все профили пользователей     : pikatoise\r\n    Все профили пользователей     : Cheburashka\r\n";
+                rowresult = srIncoming.ReadToEnd();
             }
 
             return Parser.Parse(rowresult);
