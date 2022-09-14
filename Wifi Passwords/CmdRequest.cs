@@ -15,7 +15,7 @@ namespace Wifi_Passwords
         {
             string rowresult;
 
-            //Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            //Encoding.RegisterProvider(CodePagesEncodingProvider.Instance); // На фреймворке не нужна
             var codepage = CultureInfo.CurrentCulture.TextInfo.OEMCodePage;
 
             using (Process procCommand = Process.Start(new ProcessStartInfo(@"cmd", command)

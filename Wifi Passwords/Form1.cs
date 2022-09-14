@@ -18,9 +18,9 @@ namespace Wifi_Passwords
         {
             InitializeComponent();
 
-            pR = CmdRequest.Request($@"/c netsh wlan show profiles", new WifiNameParser());
+            pR = CmdRequest.Request($@"/c netsh wlan show profiles", new WifiNameParser()); // Для теста: ping 127.0.0.1 | netsh wlan show profiles
 
-            if (pR.ErrorMessage == null) label1.Text = pR.SingleResult;
+            if (pR.ErrorMessage == null) textBox1.Text = pR.MultipleResult[0];
         }
     }
 }

@@ -10,6 +10,6 @@ namespace Wifi_Passwords
     {
         public string ErrorMessage { get; set; }
         public string SingleResult { get; set; }
-        public IEnumerable<string> MultipleResult { get; set; }
+        public List<string> MultipleResult { get; set; }
     }
 }

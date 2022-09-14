@@ -10,9 +10,13 @@ namespace Wifi_Passwords
     {
         public ParserResult Parse(string response)
         {
-            
+            response = response
+            .Replace("\r\nПрофили интерфейса Беспроводная сеть 2:\r\n\r\nПрофили групповой политики (только чтение)\r\n------------------------------------------\r\n    <Отсутствует>\r\n\r\nПрофили пользователей\r\n---------------------------\r\n    ", "")
+            .Replace("Все профили пользователей     : ", "")
+            .Replace("\r", "")
+            .Replace("\n", "");
 
-            return new ParserResult() { SingleResult = response };
+            return new ParserResult() { MultipleResult = response.Split(new string[] { "    " }, StringSplitOptions.None).ToList() };
         }
     }
 }
