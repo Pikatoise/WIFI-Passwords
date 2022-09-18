@@ -9,6 +9,7 @@ namespace Wifi_Passwords
         {
             if (response.Contains("не запущена"))
                 return new ParserResult() { ErrorMessage = "Служба беспроводной сети отсутствует или не запущена" };
+
             if (!response.Contains("     : "))
                 return new ParserResult() { ErrorMessage = "Сохраненные беспроводные сети не найдены" }; // Возможно всё сломает
 

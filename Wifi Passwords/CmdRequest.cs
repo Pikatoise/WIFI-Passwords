@@ -9,11 +9,9 @@ namespace Wifi_Passwords
     {
         public static ParserResult Request(string command, IParser Parser)
         {
-            string rowresult;
-
             //Encoding.RegisterProvider(CodePagesEncodingProvider.Instance); // На фреймворке не нужна
-
             var codepage = CultureInfo.CurrentCulture.TextInfo.OEMCodePage;
+            string rowresult;
 
             using (Process procCommand = Process.Start(new ProcessStartInfo(@"cmd", command)
             {

@@ -11,7 +11,7 @@ namespace Wifi_Passwords
         {
             InitializeComponent();
 
-            resultNames = CmdRequest.Request($@"/c netsh wlan show profiles", new WifiNameParser()); // Для теста: ping 127.0.0.1 | netsh wlan show profiles
+            /*resultNames = CmdRequest.Request($@"/c netsh wlan show profiles", new WifiNameParser()); // Для теста: ping 127.0.0.1 | netsh wlan show profiles
 
             if (resultNames.ErrorMessage == null)
             {
@@ -19,7 +19,7 @@ namespace Wifi_Passwords
                 {
                     passwords.Add(CmdRequest.Request($@"/c netsh wlan show profile name=""{s}"" key=clear | find /I ""Содержимое ключа""", new WifiNameParser()).SingleResult);
                 }
-            } else textBox1.Text = resultNames.ErrorMessage;
+            } else textBox1.Text = resultNames.ErrorMessage;*/
         }
     }
 }
