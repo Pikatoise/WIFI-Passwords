@@ -8,10 +8,10 @@ namespace Wifi_Passwords
         public ParserResult Parse(string response)
         {
             if (response.Contains("не запущена"))
-                return new ParserResult() { ErrorMessage = "Служба беспроводной сети отсутствует или не запущена" };
+                return new ParserResult() { ErrorMessage = "Служба беспроводной сети \nотсутствует или не запущена." };
 
             if (!response.Contains("     : "))
-                return new ParserResult() { ErrorMessage = "Сохраненные беспроводные сети не найдены" }; // Возможно всё сломает
+                return new ParserResult() { ErrorMessage = "Сохраненные беспроводные \nсети не найдены" }; // Возможно всё сломает
 
             response = response
             .Replace("\r\nПрофили интерфейса Беспроводная сеть 2:\r\n\r\nПрофили групповой политики (только чтение)\r\n------------------------------------------\r\n    <Отсутствует>\r\n\r\nПрофили пользователей\r\n---------------------------\r\n    ", "")

@@ -1,17 +1,19 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Wifi_Passwords
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         ParserResult resultNames;
         List<string> passwords;
-        public Form1()
+
+        public MainForm()
         {
             InitializeComponent();
 
-            /*resultNames = CmdRequest.Request($@"/c netsh wlan show profiles", new WifiNameParser()); // Для теста: ping 127.0.0.1 | netsh wlan show profiles
+            resultNames = CmdRequest.Request($@"/c netsh wlan show profiles", new WifiNameParser()); // Для теста: ping 127.0.0.1 | netsh wlan show profiles
 
             if (resultNames.ErrorMessage == null)
             {
@@ -19,7 +21,23 @@ namespace Wifi_Passwords
                 {
                     passwords.Add(CmdRequest.Request($@"/c netsh wlan show profile name=""{s}"" key=clear | find /I ""Содержимое ключа""", new WifiNameParser()).SingleResult);
                 }
-            } else textBox1.Text = resultNames.ErrorMessage;*/
+
+                for (int i = 0; i < resultNames.MultipleResult.Count; i++)
+                {
+                    mainGrid.Rows.Add(resultNames.MultipleResult[i], passwords[i]);
+                }
+            }
+            else
+            {
+                labelNetworkKey.Visible = false;
+                labelNetworkName.Visible = false;
+                mainGrid.Enabled = false;
+                mainGrid.Visible = false;
+                labelError.Visible = true;
+                labelErrorText.Visible = true;
+
+                labelErrorText.Text = resultNames.ErrorMessage;
+            }
         }
     }
 }
