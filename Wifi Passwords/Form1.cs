@@ -7,7 +7,7 @@ namespace Wifi_Passwords
     public partial class MainForm : Form
     {
         ParserResult resultNames;
-        List<string> passwords;
+        List<string> passwords = new List<string>();
 
         public MainForm()
         {
