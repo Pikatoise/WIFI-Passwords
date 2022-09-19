@@ -19,7 +19,7 @@ namespace Wifi_Passwords
             {
                 foreach (string s in resultNames.MultipleResult)
                 {
-                    passwords.Add(CmdRequest.Request($@"/c netsh wlan show profile name=""{s}"" key=clear | find /I ""Содержимое ключа""", new WifiNameParser()).SingleResult);
+                    passwords.Add(CmdRequest.Request($@"/c netsh wlan show profile name=""{s}"" key=clear | find /I ""Содержимое ключа""", new WifiPasswordsParser()).SingleResult);
                 }
 
                 for (int i = 0; i < resultNames.MultipleResult.Count; i++)
