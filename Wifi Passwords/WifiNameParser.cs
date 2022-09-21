@@ -11,14 +11,13 @@ namespace Wifi_Passwords
                 return new ParserResult() { ErrorMessage = "Служба беспроводной сети \nотсутствует или не запущена." };
 
             if (!response.Contains("     : "))
-                return new ParserResult() { ErrorMessage = "Сохраненные беспроводные \nсети отсутствуют или не найдены" }; // Возможно всё сломает
+                return new ParserResult() { ErrorMessage = "Сохраненные беспроводные \nсети отсутствуют или не найдены" };
 
             response = response
-            .Substring(response.IndexOf("---------------------------")+27)
-             //.Replace("\r\nПрофили интерфейса Беспроводная сеть 2:\r\n\r\nПрофили групповой политики (только чтение)\r\n------------------------------------------\r\n    <Отсутствует>\r\n\r\nПрофили пользователей\r\n---------------------------\r\n    ", "")
-            .Replace("Все профили пользователей     : ", "")
+            .Substring(response.IndexOf("    Все")+4)
             .Replace("\r", "")
-            .Replace("\n", "");
+            .Replace("\n", "")
+            .Replace("Все профили пользователей     : ", "");
 
             return new ParserResult() { MultipleResult = response.Split(new string[] { "    " }, StringSplitOptions.None).ToList() };
         }
