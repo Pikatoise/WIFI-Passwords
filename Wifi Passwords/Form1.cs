@@ -13,20 +13,28 @@ namespace Wifi_Passwords
         {
             InitializeComponent();
 
+            ParseNetworks();
+
+            DisplayNetworks();
+        }
+
+        void ParseNetworks()
+        {
             resultNames = CmdRequest.Request($@"/c netsh wlan show profiles", new WifiNameParser()); // Для теста: ping 127.0.0.1 | netsh wlan show profiles
 
             if (resultNames.ErrorMessage == null)
-            {
                 foreach (string s in resultNames.MultipleResult)
-                {
-                    passwords.Add(CmdRequest.Request($@"/c netsh wlan show profile name=""{s}"" key=clear | find /I ""Содержимое ключа""", new WifiPasswordsParser()).SingleResult);
-                }
+                    passwords.Add(CmdRequest.Request(
+                        $@"/c netsh wlan show profile name=""{s}"" key=clear | find /I ""Содержимое ключа""", 
+                        new WifiPasswordsParser()).SingleResult);
+        }
 
+        void DisplayNetworks()
+        {
+            if (resultNames.ErrorMessage == null)
                 for (int i = 0; i < resultNames.MultipleResult.Count; i++)
-                {
-                    mainGrid.Rows.Add(resultNames.MultipleResult[i], passwords[i]);
-                }
-            }
+                    if (!string.IsNullOrEmpty(passwords[i]))
+                        mainGrid.Rows.Add(resultNames.MultipleResult[i], passwords[i]);
             else
             {
                 labelNetworkKey.Visible = false;

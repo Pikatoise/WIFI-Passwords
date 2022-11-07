@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelNetworkName = new System.Windows.Forms.Label();
             this.labelNetworkKey = new System.Windows.Forms.Label();
             this.mainGrid = new System.Windows.Forms.DataGridView();
@@ -47,7 +47,7 @@
             this.labelNetworkName.ForeColor = System.Drawing.Color.White;
             this.labelNetworkName.Location = new System.Drawing.Point(8, 9);
             this.labelNetworkName.Name = "labelNetworkName";
-            this.labelNetworkName.Size = new System.Drawing.Size(135, 20);
+            this.labelNetworkName.Size = new System.Drawing.Size(222, 32);
             this.labelNetworkName.TabIndex = 1;
             this.labelNetworkName.Text = "Название сети";
             // 
@@ -58,7 +58,7 @@
             this.labelNetworkKey.ForeColor = System.Drawing.Color.White;
             this.labelNetworkKey.Location = new System.Drawing.Point(231, 9);
             this.labelNetworkKey.Name = "labelNetworkKey";
-            this.labelNetworkKey.Size = new System.Drawing.Size(54, 20);
+            this.labelNetworkKey.Size = new System.Drawing.Size(89, 32);
             this.labelNetworkKey.TabIndex = 2;
             this.labelNetworkKey.Text = "Ключ";
             // 
@@ -72,48 +72,51 @@
             this.mainGrid.BackgroundColor = System.Drawing.SystemColors.WindowFrame;
             this.mainGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.mainGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.WindowFrame;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.mainGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mainGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.mainGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.mainGrid.ColumnHeadersVisible = false;
             this.mainGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.WifiName,
             this.WifiKey});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.WindowFrame;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.mainGrid.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.mainGrid.DefaultCellStyle = dataGridViewCellStyle4;
             this.mainGrid.GridColor = System.Drawing.SystemColors.WindowFrame;
             this.mainGrid.Location = new System.Drawing.Point(12, 32);
             this.mainGrid.Name = "mainGrid";
             this.mainGrid.ReadOnly = true;
             this.mainGrid.RowHeadersVisible = false;
+            this.mainGrid.RowHeadersWidth = 72;
             this.mainGrid.Size = new System.Drawing.Size(273, 279);
             this.mainGrid.TabIndex = 3;
             // 
             // WifiName
             // 
             this.WifiName.HeaderText = "Название сети";
+            this.WifiName.MinimumWidth = 9;
             this.WifiName.Name = "WifiName";
             this.WifiName.ReadOnly = true;
-            this.WifiName.Width = 5;
+            this.WifiName.Width = 9;
             // 
             // WifiKey
             // 
             this.WifiKey.HeaderText = "Ключ";
+            this.WifiKey.MinimumWidth = 9;
             this.WifiKey.Name = "WifiKey";
             this.WifiKey.ReadOnly = true;
-            this.WifiKey.Width = 5;
+            this.WifiKey.Width = 9;
             // 
             // labelError
             // 
@@ -122,7 +125,7 @@
             this.labelError.ForeColor = System.Drawing.Color.White;
             this.labelError.Location = new System.Drawing.Point(108, 41);
             this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(75, 20);
+            this.labelError.Size = new System.Drawing.Size(126, 32);
             this.labelError.TabIndex = 4;
             this.labelError.Text = "Ошибка";
             this.labelError.Visible = false;
@@ -134,14 +137,14 @@
             this.labelErrorText.ForeColor = System.Drawing.Color.White;
             this.labelErrorText.Location = new System.Drawing.Point(23, 70);
             this.labelErrorText.Name = "labelErrorText";
-            this.labelErrorText.Size = new System.Drawing.Size(125, 20);
+            this.labelErrorText.Size = new System.Drawing.Size(207, 32);
             this.labelErrorText.TabIndex = 5;
             this.labelErrorText.Text = "Текст ошибки";
             this.labelErrorText.Visible = false;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(297, 323);
